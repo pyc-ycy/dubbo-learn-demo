@@ -2,10 +2,12 @@ package com.pyc.service.impl;
 
 import com.pyc.entity.UserAddress;
 import com.pyc.service.UserService;
+import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
 import java.util.List;
 
+@Service
 public class UserServiceImpl implements UserService {
     @Override
     public List<UserAddress> getUserAddressList(String userId) {
