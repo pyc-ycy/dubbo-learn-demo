@@ -14,8 +14,17 @@ import java.io.Serializable;
 @Data
 public class UserAddress implements Serializable {
     private Integer id;
-    private String UserId;
+    private String userId;
+    private String address;
     private String consignee;
     private String phoneNumber;
     private String isDefault;
+
+    public UserAddress(String userId, String address, String consignee, String phoneNumber, String isDefault){
+        this.userId = userId;
+        this.address=address;
+        this.consignee = consignee;
+        this.phoneNumber = phoneNumber;
+        this.isDefault = isDefault;
+    }
 }

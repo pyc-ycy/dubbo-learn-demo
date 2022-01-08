@@ -2,11 +2,16 @@
 <beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"
        xmlns="http://www.springframework.org/schema/beans"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-       http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context-4.0.xsd
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://dubbo.apache.org/schema/dubbo
+       http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
+    <context:component-scan base-package="com.pyc.service.impl"/>
+
     <dubbo:application name="order-service-consumer"/>
     <dubbo:registry address="zookeeper://192.168.101.2:2181"/>
-    <dubbo:protocol name="dubbo" port="20890"/>
-    <bean id="demoService" class="org.apache.dubbo.samples.basic.impl.DemoServiceImpl"/>
-    <dubbo:service interface="org.apache.dubbo.samples.basic.api.DemoService" ref="demoService"/>
+    <dubbo:reference interface="com.pyc.service.UserService" id="userService"/>
 </beans>
