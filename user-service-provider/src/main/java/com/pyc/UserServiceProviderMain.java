@@ -5,6 +5,9 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import java.io.IOException;
 
 
+/**
+ * @author 彭友聪
+ */
 public class UserServiceProviderMain {
     public static void main(String[] args) {
         ClassPathXmlApplicationContext context
